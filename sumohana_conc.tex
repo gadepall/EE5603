@@ -366,33 +366,116 @@ E\sbrak{X} &\geqslant \int_{\varepsilon}^{\infty}\varepsilon p_X(x)\,dx
  = \varepsilon \pr{X \geqslant \varepsilon}
 \end{align}
 resulting in $\eqref{eq:markov}$.
+\item {\em Chernoff Bound :} For any r.v $X$ with bounded variance, and for any $t >0$, show using \eqref{eq:markov} that %
+\begin{align}
+\Pr(e^{tX}\geqslant e^{t\varepsilon})\leqslant \frac{E\brak{e^{tX}}}{e^{t\varepsilon}}
+\end{align}
+\item Show that 
+\begin{align}
+\Pr(X\geqslant \varepsilon) = \Pr(e^{tX}\geqslant e^{t\varepsilon})
+\end{align}
+\solution This is true for any monotonic function.  
 \end{enumerate}
                                                                                                                                                                                                                                             \section{Chebyschev inequality} 
 \begin{enumerate}[label=\thesection.\arabic*,ref=\thesection.\theenumi]
-\item For any $\varepsilon >0$, show that
+\item Let
+\begin{align}
+\label{eq:chebyschev_Y} 
+Y = \brak{X-E[X]}^2
+ \end{align}
+and $\varepsilon >0$.
+Show using \eqref{eq:markov} that
+\begin{align} 
+ \Pr\brak{Y\geqslant\varepsilon^2}\leqslant \frac{E\brak{Y}}{\varepsilon^2}
+ \end{align}
+\item Show that
+\begin{align} 
+ \Pr\brak{Y\geqslant\varepsilon^2}=\Pr\brak{\sqrt{Y}\geqslant\varepsilon}+\Pr\brak{\sqrt{Y}\leqslant-\varepsilon}
+\label{eq:chebyschev_posneg}
+ \end{align}
+%
+\item Show that
+\begin{align}
+\Pr\brak{\sqrt{Y}\leqslant-\varepsilon} = 0,
+ \end{align}
+\item Show that 
+\begin{align}
+\Pr\brak{\sqrt{Y}\geqslant\varepsilon}\leqslant \frac{E\brak{Y}}{\varepsilon^2}
+ \end{align}
+\item Show that
 \begin{align}
 \label{eq:chebyschev}
  \Pr\brak{\abs{X-E[X]}\geqslant\varepsilon}\leqslant \frac{\text{Var}(X)}{\varepsilon^2}
  \end{align}
-\solution Let
-\begin{align}
-\label{eq:chebyschev_Y} 
-Y = \brak{X-E[X]}^2
-%\Pr(x \geqslant\varepsilon)=\Pr(\phi(x)\geqslant \phi(\varepsilon)).
- \end{align}
-From \eqref{eq:markov},
-\begin{align} 
- \Pr\brak{Y\geqslant\varepsilon^2}&\leqslant \frac{E\brak{Y}}{\varepsilon^2}
-\\
-\implies  \Pr\brak{\sqrt{Y}\geqslant\varepsilon}+\Pr\brak{\sqrt{Y}\leqslant-\varepsilon}&\leqslant \frac{E\brak{Y}}{\varepsilon^2}
-\label{eq:chebyschev_posneg}
- \end{align}
-\begin{align} 
-\because
-\sqrt{Y} &= \abs{X-E[X]},
-\\
-\Pr\brak{\sqrt{Y}\leqslant-\varepsilon} &= 0,
- \end{align}
-substituting in \eqref{eq:chebyschev_posneg} results in \eqref{eq:chebyschev}.
 \end{enumerate}
+\section{Law of large numbers (LLN)}
+\begin{enumerate}[label=\thesection.\arabic*,ref=\thesection.\theenumi]
+\item Let
+\begin{align}
+S_n=\frac{1}{n}\sum_{i=1}^{n} X_i 
+\end{align}
+where $X_i$ are i.i.d r.v. with mean $\mu$  and bounded variance $\sigma^2$.
+Show that 
+\begin{align}
+E\brak{S_n}&=\mu
+\\
+\text{Var}\brak{S_n}&=\frac{\sigma^2}{n}
+\end{align}
+\item Using Chebyschev inequality in \eqref{eq:chebyschev},  show that 
+\begin{align}
+\Pr\brak{\abs{S_n-\mu}\geqslant \varepsilon}\leqslant \frac{\sigma^2}{n\varepsilon^2}
+\end{align}
+\item Show that 
+\begin{align}
+\lim_{n\to \infty}\Pr\brak{\abs{S_n-\mu}\geqslant \varepsilon} = 0
+\end{align}
+\end{enumerate}
+\section{Hoeffding's Lemma}
+\begin{enumerate}[label=\thesection.\arabic*,ref=\thesection.\theenumi]
+\item A convex function $g$ is defined as
+\begin{multline}
+g\brak{ax+b(1-x)} \leqslant xg(a)+\brak{1-x}g(b), 
+\\
+0 \leqslant x \leqslant 1
+\end{multline}
+\item Show that 
+\begin{align}
+g\brak{x} = e^{sx}, s > 0
+\end{align}
+is convex.
+\item Find the equation of the line joining the points $\brak{a,e^{as}}$ and $\brak{b,e^{bs}}$.
+\item ({\em Jensen's Inequality}) Show that
+\begin{align}
+g\brak{E\sbrak{X}} \leqslant E\sbrak{g(X)}
+\end{align}
+\item Show that $\Pr\brak{\abs{S_n-\mu}\geqslant \varepsilon}$
+\end{enumerate}
+\begin{align}
+mativation:s_n=\Sigma_{1=1}^{n} X_i [x_i are iid]\\
+\end{align}
+\textbf{applying chebysher inequality} to  $\frac{s_n}{n}$ gives us.\\
+\begin{align}
+\Pr(|\frac{s_n}{n}-\mu| \geqslant\varepsilon)\leqslant \frac{\sigma^2}{n\varepsilon^2}\\
+\end{align}
+where $Var(X_i)=\sigma^2 E{X_i}=\mu$.\\
+\textbf{ how about the tail problitity} $\Pr(|\frac{s_n}{n}-\mu \geqslant \varepsilon)?$\\
+
+we know $Pr(\frac{s_n}{n}-\mu\geqslant \varepsilon)= \Pr(e^{\lambda(\frac{s_n}{n})}-\mu \geqslant e^{\lambda\varepsilon}$\\
+apply
+\begin{align}
+\mu.I. \leqslant \frac{E[e^\lambda(\frac{s_n}{n}-\mu)]}{e^\lambda\varepsilon}\\
+\end{align}
+\begin{align}
+=e^{-\lambda \varepsilon} E[e^\lambda[\frac{1}{n} \Sigma_{1=1}^{n} X_i-E[Xi]\\
+\end{align}
+\begin{align}
+=e^-{\lambda\varepsilon} \Pi_{1=1}^{n} E[e^\lambda \frac{X_i-E[xi]}{n}]\\ 
+\end{align}
+Question: How canwe come with a toght bound for the \\
+moment guerating function of (X-E[X]).\\
+\section{hoeffding's lemma:}if x is a radom vaniable with E[X]=0 and a$\leqslant X \leqslant b$, then for a any s$>$0
+
+$E[e^{sx}]\leqslant e\frac{s^2(b-a)^2}{8}$\\
+
+
 \end{document}

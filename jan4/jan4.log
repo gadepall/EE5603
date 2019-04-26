@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  11 APR 2019 23:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  26 APR 2019 09:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -629,62 +629,17 @@ File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <9> not available
 (Font)              Font shape `OMS/txsy/m/n' tried instead on input line 238.
+ [1
 
-Underfull \hbox (badness 10000) in paragraph at lines 359--360
-
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 370--372
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 380--382
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 395--396
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 398--400
-
- []
-
-[1
-
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 402--404
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 406--408
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 410--412
-
- []
-
-[2
 
 ] (./jan4.aux) ) 
 Here is how much of TeX's memory you used:
- 7218 strings out of 494591
- 111902 string characters out of 6176027
- 378174 words of memory out of 5000000
- 10756 multiletter control sequences out of 15000+600000
+ 7222 strings out of 494591
+ 111967 string characters out of 6176027
+ 380174 words of memory out of 5000000
+ 10760 multiletter control sequences out of 15000+600000
  61222 words of font info for 146 fonts, out of 8000000 for 9000
  17 hyphenation exceptions out of 8191
- 36i,10n,40p,324b,264s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,12n,40p,297b,264s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on jan4.dvi (2 pages, 6632 bytes).
+Output written on jan4.dvi (1 page, 6012 bytes).
