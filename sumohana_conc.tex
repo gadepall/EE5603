@@ -121,6 +121,7 @@ breaklines=true
 \providecommand{\mtx}[1]{\mathbf{#1}}
 \providecommand{\mean}[1]{E\left[ #1 \right]}
 \providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
 %\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
 \providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
 	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
@@ -146,6 +147,7 @@ breaklines=true
 \makeatother
 
 \let\StandardTheFigure\thefigure
+\let\vec\mathbf
 %\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
 \renewcommand{\thefigure}{\theproblem}
 
@@ -188,7 +190,7 @@ EE5603:Concentration Inequalities
 \author{Sumohana Chennappayya and G V V Sharma$^{*}$ %<-this  stops a space
 \thanks{ *The author is with the Department
 of Electrical Engineering, IIT, Hyderabad
-502285 India e-mail: \{gadepall\}@iith.ac.in. All material in the manuscript is released under GNU GPL.  Free to use for all.}% <-this % stops a space
+502285 India e-mail: gadepall@iith.ac.in. All material in the manuscript is released under GNU GPL.  Free to use for all.}% <-this % stops a space
 %\thanks{J. Doe and J. Doe are with Anonymous University.}% <-this % stops a space
 %\thanks{Manuscript received April 19, 2005; revised January 11, 2007.}}
 }
@@ -368,10 +370,12 @@ E\sbrak{X} &\geqslant \int_{\varepsilon}^{\infty}\varepsilon p_X(x)\,dx
 resulting in $\eqref{eq:markov}$.
 \item {\em Chernoff Bound :} For any r.v $X$ with bounded variance, and for any $t >0$, show using \eqref{eq:markov} that %
 \begin{align}
+\label{eq:chernoff}
 \Pr(e^{tX}\geqslant e^{t\varepsilon})\leqslant \frac{E\brak{e^{tX}}}{e^{t\varepsilon}}
 \end{align}
 \item Show that 
 \begin{align}
+\label{eq:markov_chernoff}
 \Pr(X\geqslant \varepsilon) = \Pr(e^{tX}\geqslant e^{t\varepsilon})
 \end{align}
 \solution This is true for any monotonic function.  
@@ -432,50 +436,173 @@ E\brak{S_n}&=\mu
 \end{enumerate}
 \section{Hoeffding's Lemma}
 \begin{enumerate}[label=\thesection.\arabic*,ref=\thesection.\theenumi]
+\item Consider a r.v. $X$ such that  $a < X < b$. If $\theta = \frac{a}{a-b}$ and $E\sbrak{X} = 0$, show that 
+\begin{align}
+0 < \theta < 1
+\end{align}
 \item A convex function $g$ is defined as
-\begin{multline}
-g\brak{ax+b(1-x)} \leqslant xg(a)+\brak{1-x}g(b), 
-\\
-0 \leqslant x \leqslant 1
-\end{multline}
+\begin{align}
+g\brak{x} \leqslant f(x), \quad x \in \brak{a,b}
+\end{align}
+where $f$ is the line joining the points $\brak{a,g(a)}$ and $\brak{b,g(b)}$.  Show that
+\begin{align}
+\label{eq:hoeff_convex}
+E\sbrak{f(X)} \le \frac{bg(a)- ag(b)}{b-a}
+\end{align}
+%
 \item Show that 
 \begin{align}
 g\brak{x} = e^{sx}, s > 0
+\label{eq:exp_convex}
 \end{align}
 is convex.
-\item Find the equation of the line joining the points $\brak{a,e^{as}}$ and $\brak{b,e^{bs}}$.
-\item ({\em Jensen's Inequality}) Show that
+\item Using \eqref{eq:hoeff_convex} and \eqref{eq:exp_convex}, show that the moment generating function (MGF) of $X$
 \begin{align}
-g\brak{E\sbrak{X}} \leqslant E\sbrak{g(X)}
+\label{eq:hoeff_mgf}
+M_{X}(s) = E\sbrak{e^{sX}}  \le e^{-u\theta}\brak{1-\theta + \theta e^u},
 \end{align}
-\item Show that $\Pr\brak{\abs{S_n-\mu}\geqslant \varepsilon}$
+%
+where $u = s(b-a)$.
+\item Let 
+\begin{align}
+\label{eq:hoeff_psi}
+e^{-u\theta}\brak{1-\theta + \theta e^u} = e^{\psi(u)}
+\end{align}
+Show that 
+\begin{align}
+\label{eq:hoeff_psi_der}
+\psi(0) &= 0
+\\
+\psi^{\prime}(0) &= 0
+\\
+\psi^{\prime\prime}(v) &= t \brak{1-t}, \quad t = \frac{\theta e^{v}}{1 - \theta + \theta e^{v}}.
+\end{align}
+\item Show that 
+\begin{align}
+\label{eq:hoeff_psi_der2}
+\psi^{\prime\prime}(v) \le \frac{1}{4}
+\end{align}
+\item According to Taylor's theorem,
+\begin{align}
+\label{eq:hoeff_taylor}
+\psi(u) = \psi(0)  + u\psi^{\prime}(0) + \frac{u^2}{2}\psi^{\prime\prime}(v) \quad 0 < v < u.
+\end{align}
+\item Using \eqref{eq:hoeff_psi_der}, \eqref{eq:hoeff_psi_der2} and \eqref{eq:hoeff_taylor}, show that 
+\begin{align}
+\label{eq:hoeff_psi_ineq}
+\psi(u) \le  \frac{u^2}{8} \quad 0 < v < u.
+\end{align}
+\item From \eqref{eq:hoeff_mgf}, \eqref{eq:hoeff_psi} and \eqref{eq:hoeff_psi_ineq}, show that 
+\begin{align}
+\label{eq:hoeff_lemma}
+M_{X}(s) \le  e^\frac{s^2\brak{b-a}^2}{8} 
+\end{align}
+
+%\item ({\em Jensen's Inequality}) Show that
+%\begin{align}
+%g\brak{E\sbrak{X}} \leqslant E\sbrak{g(X)}
+%\end{align}
 \end{enumerate}
+\section{Hoeffding's Inequality}
+\begin{enumerate}[label=\thesection.\arabic*,ref=\thesection.\theenumi]
+\item Let 
 \begin{align}
-mativation:s_n=\Sigma_{1=1}^{n} X_i [x_i are iid]\\
+S_n=\sum_{i=1}^{n} X_i, \quad X_i \in \sbrak{a_i,b_i}, E\sbrak{X_i}  = 0
 \end{align}
-\textbf{applying chebysher inequality} to  $\frac{s_n}{n}$ gives us.\\
+%
+wherer $X_i$ are independent and 
 \begin{align}
-\Pr(|\frac{s_n}{n}-\mu| \geqslant\varepsilon)\leqslant \frac{\sigma^2}{n\varepsilon^2}\\
+Y = S_n- E\sbrak{S_n}.
 \end{align}
-where $Var(X_i)=\sigma^2 E{X_i}=\mu$.\\
-\textbf{ how about the tail problitity} $\Pr(|\frac{s_n}{n}-\mu \geqslant \varepsilon)?$\\
+%
+\item Using \eqref{eq:chernoff} and \eqref{eq:markov_chernoff}, show that 
+\begin{align}
+\label{eq:hoeff_chernoff}
+\pr{Y \ge t} \le e^{-st} M_{Y}(s).
+\end{align}
+\item Show that 
+\begin{align}
+\label{eq:hoeff_mgf_prod}
+M_{Y}(s)= \prod_{i=1}^{n}M_{X_i}(s)
+\end{align}
+\item From \eqref{eq:hoeff_chernoff}, \eqref{eq:hoeff_mgf_prod} and 
+\eqref{eq:hoeff_lemma}, show that 
+\begin{align}
+\label{eq:hoeff_mgf_prod}
+\pr{Y \ge t} \le \exp\brak{-st+\frac{1}{8}s^2\norm{\vec{b}-\vec{a}}^2}
+\end{align}
+\item Show that 
+\begin{align}
+\label{eq:hoeff_min_ineq}
+\min_{s}\brak{-st+\frac{1}{8}s^2\norm{\vec{b}-\vec{a}}^2} = -\frac{2t^2}{\norm{\vec{b}-\vec{a}}^2}
+\end{align}
+\item Show that 
+\begin{align}
+\label{eq:hoeff_ineq}
+\pr{S_n- E\sbrak{S_n} \ge t} \le \exp\brak{-\frac{2t^2}{\norm{\vec{b}-\vec{a}}^2}}
+\end{align}
+\end{enumerate}
 
-we know $Pr(\frac{s_n}{n}-\mu\geqslant \varepsilon)= \Pr(e^{\lambda(\frac{s_n}{n})}-\mu \geqslant e^{\lambda\varepsilon}$\\
-apply
+\section{Bennet's Inequality}
+\begin{enumerate}[label=\thesection.\arabic*,ref=\thesection.\theenumi]
+\item A real valued r.v $X$ is  said to be $\sigma^2$-sub Gaussian if there exists a $\sigma$ such that 
 \begin{align}
-\mu.I. \leqslant \frac{E[e^\lambda(\frac{s_n}{n}-\mu)]}{e^\lambda\varepsilon}\\
+M_{X}(\lambda) < e^{\frac{\lambda^2 \sigma^2}{2}}
 \end{align}
+\item Let
 \begin{align}
-=e^{-\lambda \varepsilon} E[e^\lambda[\frac{1}{n} \Sigma_{1=1}^{n} X_i-E[Xi]\\
+\phi(x) = e^x - x -1.
 \end{align}
+%
+Show that $u^{-2}\phi(u)$ is non-decreasing.
+\item  Show that
 \begin{align}
-=e^-{\lambda\varepsilon} \Pi_{1=1}^{n} E[e^\lambda \frac{X_i-E[xi]}{n}]\\ 
+\brak{\lambda X_i}^{-2} \phi \brak{\lambda X_i}\leqslant \lambda^{-2} \phi (\lambda), \quad \lambda > 0, X_i < 1.
 \end{align}
-Question: How canwe come with a toght bound for the \\
-moment guerating function of (X-E[X]).\\
-\section{hoeffding's lemma:}if x is a radom vaniable with E[X]=0 and a$\leqslant X \leqslant b$, then for a any s$>$0
-
-$E[e^{sx}]\leqslant e\frac{s^2(b-a)^2}{8}$\\
-
+\item Show that
+\begin{align}
+E[e^{\lambda X_i}]\leqslant 1+\lambda E\sbrak{ X_i}+E\sbrak{X_i^2}\phi (\lambda)
+\end{align}
+\item Let 
+\begin{align}
+S = \sum_{1=1}^{n} X_i - E\sbrak{X_i}.
+\end{align}
+%
+Show that 
+\begin{multline}
+\label{eq:bennet_mgf}
+\log M_{S}(\lambda) \leqslant  \sum_{i=1}^{n} \log\sbrak{1+\lambda E\brak{ X_i}+E\brak{X_i^2} \phi (\lambda)} 
+\\
+- \lambda \sum_{i=1}^{n}E \brak{X_i}
+\end{multline}
+\item Given that $\log$ is convex, show that
+\begin{multline}
+\sum_{1=1}^{n} \log \sbrak{1+\lambda E\brak{X_i}+E\brak{X_i^2}\phi (\lambda)}
+\\
+\le 
+n \log \sbrak{\frac{1}{n} \sum_{1=1}^{n}\brak{1+\lambda E\brak{X_i}+E\brak{X_i^2}\phi (\lambda)}}
+\end{multline}
+\item Using the fact that $\log (1+x) \leqslant x, x \geqslant 0$, show that 
+\begin{multline}
+\label{eq:bennet_log_ineq}
+n \log \sbrak{\frac{1}{n} \sum_{1=1}^{n}\brak{1+\lambda E\brak{X_i}+E\brak{X_i^2}\phi (\lambda)}}
+\\
+- \lambda \sum_{i=1}^{n}E \brak{X_i}
+\le
+v\phi (\lambda)
+\end{multline}
+%
+where
+\begin{align}
+v &= \sum_{1=1}^{n} E \brak{X_i^2},
+\\
+\sum_{1=1}^{n} E \brak{X_i} & \ge 0,
+\end{align}
+\item From \eqref{eq:bennet_mgf}and \eqref{eq:bennet_log_ineq}, show that
+\begin{align}
+\log M_{S}(\lambda) \le \frac{v}{b^2}\phi(\lambda b),
+\end{align}
+for $X_i \le b$.
+\end{enumerate}
 
 \end{document}
