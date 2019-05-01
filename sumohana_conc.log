@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  28 APR 2019 18:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  1 MAY 2019 07:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -630,27 +630,117 @@ File: utxsyc.fd 2000/12/15 v3.1
 Underfull \vbox (badness 2529) has occurred while \output is active []
 
  [2]
-Overfull \hbox (13.00061pt too wide) detected at line 577
- []$[]   [] \OML/txmi/m/it/12 M[]\OT1/txr/m/n/12 (\OML/txmi/m/it/12 ^^U\OT1/txr
-/m/n/12 ) \U/txsya/m/n/12 6 [] [] [] []$ 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 647--649
+\OT1/txr/bx/n/12 Recall $\OML/txmi/m/it/12 u[] \OT1/txr/m/n/12 =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 647--649
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 650--651
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 652--653
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 654--655
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 656--657
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 658--659
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 662--664
+$\U/txsya/m/n/12 6 \OML/txmi/m/it/12 sup[]sup[] [] \OMS/txsy/m/n/12 j\OML/txmi/
+m/it/12 g\OT1/txr/m/n/12 (\OML/txmi/m/it/12 x[]\OMS/txsy/m/n/12 j\OML/txmi/m/it
+/12 x[]; x\OT1/txr/m/n/12 ) \OMS/txsy/m/n/12 ^^@
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 665--666
+
+ []
+
+
+Overfull \hbox (22.7814pt too wide) detected at line 670
+[]
+ []
+
+
+Overfull \hbox (23.08083pt too wide) detected at line 676
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 726--728
+
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [3]
-(./sumohana_conc.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 733--736
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 737--738
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 739--740
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 741--742
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 749--750
+
+ []
+
+[4]
+Overfull \hbox (10.45163pt too wide) detected at line 807
+[]
+ []
+
+[5
+
+] (./sumohana_conc.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7219 strings out of 494591
- 111941 string characters out of 6176027
+ 7220 strings out of 494591
+ 111955 string characters out of 6176027
  382174 words of memory out of 5000000
- 10760 multiletter control sequences out of 15000+600000
+ 10761 multiletter control sequences out of 15000+600000
  60929 words of font info for 145 fonts, out of 8000000 for 9000
  17 hyphenation exceptions out of 8191
- 36i,12n,40p,306b,277s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,14n,40p,306b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on sumohana_conc.dvi (3 pages, 17836 bytes).
+Output written on sumohana_conc.dvi (5 pages, 30204 bytes).
