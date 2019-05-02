@@ -611,70 +611,109 @@ for $X_i \le b$.
 \begin{enumerate}[label=\thesection.\arabic*,ref=\thesection.\theenumi]
 \item Let 
 \begin{align}
-\vec{X}_i &= \myvec{X_1 & X_2 & \dots & X_i},
+\vec{X}_i &= \vec{X}_{1:i}=\myvec{X_1 & X_2 & \dots & X_i},\, \text{(say)}
 \\
-\implies \vec{X}_n &= \myvec{X_1 & X_2 & \dots & X_n}=\vec{X}\, \text{(say)}
+\vec{X} &\define \vec{X}_n 
 \\
 B_i &\define E\sbrak{g\brak{\vec{X}} |\vec{X}_i}
 \end{align}
+where $X_i$ are all independent.
 Show that
 \begin{align}
 B_n &= g\brak{\vec{X}}
 \\
 B_0 &= E\sbrak{g\brak{\vec{X}}}
-\end{align}
-\item If
-\begin{align}
-V_i &=B_i - B_{i-1}
-\end{align}
-Where $X_k, k = 1, 2, \dots, i$  are independent. If 
-\begin{multline}
-\sup _{{x_{1},x_{2},\dots ,x_{n},{\hat  x}_{i}}}|f(x_{1},x_{2},\dots ,x_{n})
 \\
--f(x_{1},x_{2},\dots ,x_{{i-1}},{\hat  x}_{i},x_{{i+1}},\dots ,x_{n})|\leq c_{i}
+B_i &= \sum_{\vec{a}_{i+1:n}}g\brak{\vec{X}_{i},\vec{a}_{i+1:n}}\pr{\vec{X}_{i+1:n} = \vec{a}_{i+1:n}}
+\end{align}
+%\item Show that 
+%\begin{align}
+%\abs{x-y} \le c \implies \abs{x-py} \le c, \quad 0 < p < 1
+%\end{align}
+
+%Where $X_k, k = 1, 2, \dots, i$  are independent. If 
+\item If
+\begin{multline}
+|g(x_{1},x_{2},\dots ,x_{n})
+\\
+-g(x_{1},x_{2},\dots ,x_{{i-1}},{\hat  x}_{i},x_{{i+1}},\dots ,x_{n})|\leq c_{i}
 \\
  {\text{for}}\quad 1\leq i\leq n,
 \end{multline}
 %
 show that
+\begin{multline}
+|g\brak{\vec{X}_{i},\vec{a}_{i+1:n}}
+\\
+-\sum_{{a}_{i}^{\prime}}g\brak{\vec{X}_{i},a_i^{\prime},\vec{a}_{i+1:n}}\pr{{X}_{i} = {a}_{i}^{\prime}}
+|
+\\
+\le c_i
+\label{eq:diarmid_ineq}
+\end{multline}
+\solution
+\begin{align}
+\because 
+\sum_{{a}_{i}^{\prime}}\pr{{X}_{i} = {a}_{i}^{\prime}} = 1,
+\end{align}
+\eqref{eq:diarmid_diff} can be expressed as
+\begin{multline}
+\sum_{{a}_{i}^{\prime}}|g\brak{\vec{X}_{i},\vec{a}_{i+1:n}}
+-g\brak{\vec{X}_{i},a_i^{\prime},\vec{a}_{i+1:n}}|
+\\
+\times \pr{{X}_{i} 
+= {a}_{i}^{\prime}}
+\le 
+ c_i
+\end{multline}
+\item If
+\begin{align}
+V_i &=B_i - B_{i-1}, 
+\end{align}
+show that 
 \begin{align}
 \abs{V_i} \le c_i
 \end{align}
 \solution
-(iii)given $X^{i-1},$there exist function $u,L_i$such that
+\begin{multline}
+\because V_i =B_i - B_{i-1} 
+\\
+= 
+\sum_{\vec{a}_{i+1:n}}g\brak{\vec{X}_{i},\vec{a}_{i+1:n}}\pr{\vec{X}_{i+1:n} = \vec{a}_{i+1:n}}
+\\
+- 
+\sum_{\vec{a}_{i:n}}g\brak{\vec{X}_{i-1},\vec{a}_{i:n}}\pr{\vec{X}_{i:n} = \vec{a}_{i:n}}
+\end{multline}
+%
+we obtain
+\begin{multline}
+\abs{ V_i}
+\le 
+\sum_{\vec{a}_{i+1:n}}|g\brak{\vec{X}_{i},\vec{a}_{i+1:n}}
+\\
+-\sum_{{a}_{i}^{\prime}}g\brak{\vec{X}_{i},a_i^{\prime},\vec{a}_{i+1:n}}\pr{{X}_{i} = {a}_{i}^{\prime}}
+|
+\\
+\pr{\vec{X}_{i+1:n} = \vec{a}_{i+1:n}}
+\label{eq:diarmid_diff}
+\end{multline}
+Using \eqref{eq:diarmid_ineq} in \eqref{eq:diarmid_diff},
+
 \begin{align}
-[u_i-L_i \leqslant c_i] L_i\leqslant V_i u_i
+\abs{V_i} \le c_i \sum_{\vec{a}_{i+1:n}}\pr{\vec{X}_{i+1:n} = \vec{a}_{i+1:n}} = c_i
+%\because 
+%\sum_{{a}_{i}^{\prime}}\pr{{X}_{i} = {a}_{i}} = 1,
 \end{align}
-\textbf{Recall} $u_i=sup_{\lambda '\epsilon x} {E[g(x^n)|x^{1-1},\lambda^1]-E[g(x^n)|x^{1-1}]}$\\
- 
-$ L_i=inf_{\lambda \epsilon x}  {E[g(x^n)|x^{1-1},\lambda ]-E[g(x^n)|x^{1-1}]}$\\
-
-$u_i-L_i=sup_{\lambda'\epsilon x}{E[g(x^n)|x^{1-1},x']-E[g(x^n)|x^{1-1}]}$\\
-
-$inf_{\lambda \epsilon x} {E[g(x^n)|x^{1-1},x]-E[g(x^n)|x^{1-1}]}$\\
-
-$=sub_{\lambda \epsilon x} sup_{\lambda \epsilon x} {E[g(x^n)|x^{1-1}x]-E[g(x^n)|x^{1-1},x]}$\\
-
-$=sub_{\lambda \epsilon x} sup_{\lambda \epsilon x}\int [g(x^n|x^{1-1},x)-g(x^n|x^{1-1},x^1)]$\\
- 
-\begin{align}
-d px_{i+1}^n
-\end{align}
-$\leqslant sup_{\lambda \varepsilon x} sup_{\lambda \varepsilon x} \int|g(x^n|x^{1-1} ,x)-g(x^n|x^{1-1},x^1)|dp X^{n}_{1-1}(since \int f-g\leqslant \int |f-g|)$
-
-$\leqslant c_i$ (from bounded  differences property\\
-
-$\therefore u_i-L_i\leqslant c_i $ or $L_i\leqslant u_i\leqslant L_i+c_i$
-\begin{align}
-u_i-L_i \leqslant c_i, u_i=sup_{\lambda' \epsilon x}{E[g(x^n)|x^{1=1},\lambda']-E[g(x^{1=1}]}
-\end{align}
-\begin{align}
-L_i=inf_{\lambda \epsilon x}{E[g(x^n)|x^{1=1},x]-E[g(x^n)|x^{1=1}]}
-\end{align}
-\begin{align}
-u_i-L_i=sup_{\lambda \epsilon x} sup_{\lambda \epsilon x}{E[g(x^n)|x^{1=1}-E[g(x^n)|x^{1=1},x'}
-\end{align}
-
+%\eqref{eq:diarmid_diff} can be expressed as
+%\begin{multline}
+%\sum_{{a}_{i}^{\prime}}|g\brak{\vec{X}_{i},\vec{a}_{i+1:n}}
+%-g\brak{\vec{X}_{i},a_i^{\prime},\vec{a}_{i+1:n}}|
+%\\
+%\times \pr{{X}_{i} 
+%= {a}_{i}^{\prime}}
+%\le 
+% c_i
+%\end{multline}
 \item Show that 
 \begin{align}
  E\sbrak{V_i}  = 0
