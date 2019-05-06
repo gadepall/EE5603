@@ -738,63 +738,18 @@ substituting $\vec{a} = -\vec{c}, \vec{b} = \vec{c}$ in \eqref{eq:hoeff_ineq}, s
 \\
 \pr{S_n- E\sbrak{S_n} \le -t} &\le \exp\brak{-\frac{t^2}{2\norm{\vec{c}}^2}}
 \end{align}
-%\item If
-%\begin{align}
-%V_i=E\sbrak{g\brak{\vec{X}_n} |\vec{X}_i}-E\sbrak{g\brak{\vec{X}_{n}}\vert\vec{X}_{i-1}}
-%\end{align}
-%and
-%\begin{align}
-%V=g\brak{\vec{X}_n}-E\sbrak{g\brak{\vec{X}_n}}
-%\end{align}
-%show that
-%\begin{align}
-%V=\sum_{i=1}V_i
-%\end{align}
-%\item Let
-%\begin{align}
-%L_i&=\inf_{x}\sbrak{E\sbrak{g\brak{\vec{X}_n} |\vec{X}_i,x}-E\sbrak{g\brak{\vec{X}_{n}}\vert\vec{X}_{i-1}}}
-%\\
-%U_i&=\inf_{x^{\prime}}\sbrak{E\sbrak{g\brak{\vec{X}_n} |\vec{X}_i,x^{\prime}}-E\sbrak{g\brak{\vec{X}_{n}}\vert\vec{X}_{i-1}}}
-%\end{align}
-%
 
 \end{enumerate}
-\textbf{$\bullet$ Eform-stein inequality:}let
-\begin{align}
-X_1, \dots, X_n
-\end{align}
-be indepentent RVs. let $\delta:x^n\rightarrow |R$ be a square integrable function. let $z=f(x_1...x_n,)$\\
-\begin{align}
-Var(z)\leqslant \Sigma_{1=1}^{n} E(z-E^i(z))^2
-\end{align}
-\begin{align}
-E_i(z)=E(f(x^n)|x^1].
-\end{align}
-To dos\\
-$\bullet \vartriangle_i=E_i(z)-E_{1=1}(z)$\\
 
-$\bullet Z-E[z]= \Sigma_{1=1}^{n} \vartriangle_i$\\
-
-$\bullet$if$E^i(z)= \int f(x_1...x_i-1,x_{i+1}...x_n)$\\
-
- $dp(x_i) E_i[E^i(z)]=E_{i-1(z)}$\\
-
-\section{Convergence}
-\subsection{Definitions}
-%\begin{itemize}
-%\item Today :$\bullet$Reviw  Mc diamnid's inequality
-%\$\bullet$Eform-stein inequality inequality
-%\end{itemize}
-show that\\
-\section{Review}
 \section{Efrom-stein inquality}
-let
+\begin{enumerate}[label=\thesection.\arabic*,ref=\thesection.\theenumi]
+\item Let
 \begin{align}
-X_1, \dots, X_n
+\vec{X}= \myvec{X_1 & X_2 &  \dots & X_n}
 \end{align}
-be independent RVs,let $f:x^n \rightarrow |R$ be a square integrable, $z=f(x_1....x_n).$
+be a random vector comprising of independent r.vs and $f$ be  square integrable.
 \begin{align}
-Var(z) \leqslant \Sigma_{1=1}^{n} E[(z-E^i(z))^2] dif \vartheta
+\text{var}\sbrak{f\brak{\vec{X}}} \leqslant \frac{1}{2}\sum_{i=1}^{n} E\sbrak{\cbrak{f\brak{\vec{X}}-f\brak{X_{1:i-1},X_{i}^{\prime},X_{i+1:n}}}^2}
 \end{align}
 \begin{align}
 \bullet E_i(z)=E[f(x_i...x_n)|x^i]; E_\circ=E
@@ -871,4 +826,5 @@ E[\Delta_i^2] \geqslant (E[\Delta_i])^2 or
 (E[\Delta_i])^2\leqslant E[\Delta_i^2]:\rightarrow 4
 \end{align}
  Recall Var =$E[\Sigma_{1=1}^{n} \Delta_i^2]$
+\end{enumerate}
 \end{document}

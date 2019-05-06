@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  2 MAY 2019 14:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  3 MAY 2019 10:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -636,45 +636,21 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 765--767
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 772--775
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 776--777
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 778--779
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 780--781
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 788--789
-
- []
-
-[4]
-Overfull \hbox (10.45163pt too wide) detected at line 846
+Overfull \hbox (24.34741pt too wide) detected at line 753
 []
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5]
-(./sumohana_conc.aux)
+ [4]
+Overfull \hbox (34.45163pt too wide) detected at line 801
+[]
+ []
+
+[5
+
+] (./sumohana_conc.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -688,4 +664,4 @@ Here is how much of TeX's memory you used:
  17 hyphenation exceptions out of 8191
  36i,14n,40p,306b,316s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on sumohana_conc.dvi (5 pages, 29908 bytes).
+Output written on sumohana_conc.dvi (5 pages, 29060 bytes).
