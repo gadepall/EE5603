@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  3 MAY 2019 10:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  6 MAY 2019 08:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -636,15 +636,15 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Overfull \hbox (24.34741pt too wide) detected at line 753
+Overfull \hbox (24.34741pt too wide) detected at line 765
 []
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 4048) has occurred while \output is active []
 
  [4]
-Overfull \hbox (34.45163pt too wide) detected at line 801
+Overfull \hbox (34.45163pt too wide) detected at line 813
 []
  []
 
@@ -664,4 +664,4 @@ Here is how much of TeX's memory you used:
  17 hyphenation exceptions out of 8191
  36i,14n,40p,306b,316s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on sumohana_conc.dvi (5 pages, 29060 bytes).
+Output written on sumohana_conc.dvi (5 pages, 30064 bytes).

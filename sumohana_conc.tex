@@ -741,8 +741,22 @@ substituting $\vec{a} = -\vec{c}, \vec{b} = \vec{c}$ in \eqref{eq:hoeff_ineq}, s
 
 \end{enumerate}
 
-\section{Efrom-stein inquality}
+\section{Efrom-Stien Inequality}
 \begin{enumerate}[label=\thesection.\arabic*,ref=\thesection.\theenumi]
+\item Let
+\begin{align}
+\vec{V}= \sum_{i=1}^{n}{V}_i = Z - E\brak{Z}
+\end{align}
+Show that 
+\begin{align}
+\text{var} \brak{Z} = \sum_{1=1}^{n}E[ V_i^2]+2\sum_{i>j}E[V_i V_j]
+\end{align}
+\item If
+\begin{align}
+\vec{X}_i = \vec{X}_{1:i}=\myvec{X_1 & X_2 & \dots & X_i},\, \text{(say)}
+\end{align}
+%
+and
 \item Let
 \begin{align}
 \vec{X}= \myvec{X_1 & X_2 &  \dots & X_n}
@@ -758,23 +772,23 @@ be a random vector comprising of independent r.vs and $f$ be  square integrable.
 \bullet E^i(z)= \int_{\lambda_i \epsilon x} f(x_1...x_i,...x_n)dp(xi)
 \end{align}
 \begin{align}
-\bullet if \Delta_i=E_i(z)-E_{i-1}(z),\Sigma_{1=1}^{n} \Delta_i=z-E(z).\rightarrow 1
+\bullet if V_i=E_i(z)-E_{i-1}(z),\sum_{1=1}^{n} V_i=z-E(z).\rightarrow 1
 \end{align}
 \begin{align}
 \bullet Var(z)=E[(z-E(z))^2] (from defin)
 \end{align}
 \begin{align}
-=E[(\Sigma_{1=1}^{n} \Delta_i)^2] (from 1)
+=E[(\sum_{1=1}^{n} V_i)^2] (from 1)
 \end{align}
 \begin{align}
-=E[\Sigma_{1=1}^{n} \Delta_i^2 +2\Sigma_{j>i} \Delta_i \Delta _j]
+=E[\sum_{1=1}^{n} V_i^2 +2\sum_{j>i} V_i V _j]
 \end{align}
 \begin{align}
-E[\Sigma_{1=1}^{n} \Delta_i^2]+2.\Sigma_{j>i}E[\Delta_j \Delta_i]
+E[\sum_{1=1}^{n} V_i^2]+2.\sum_{j>i}E[V_j V_i]
 \end{align}
-\textbf{Claim:}if $j>i,E_i \Delta_i=0$
+\textbf{Claim:}if $j>i,E_i V_i=0$
 \begin{align}
-E_i\Delta_j=E_i[E_j(z)-E_{j-1}(z)]
+E_iV_j=E_i[E_j(z)-E_{j-1}(z)]
 \end{align}
 \begin{align}
 =E[E_j(z)-E_{j-1}(z)|x^i]
@@ -785,9 +799,9 @@ E_i\Delta_j=E_i[E_j(z)-E_{j-1}(z)]
 \begin{align}
 =0
 \end{align}
-if$E_i \Delta_j=0 j>i,$then $2\Sigma_{j>i}E[\Delta_i\Delta_j]=?=0$
+if$E_i V_j=0 j>i,$then $2\sum_{j>i}E[V_iV_j]=?=0$
 \begin{align}
-\Rightarrow Var(z)=E(\Sigma_{1=1}^{n} \Delta_i^2)\rightarrow2
+\Rightarrow Var(z)=E(\sum_{1=1}^{n} V_i^2)\rightarrow2
 \end{align}
 $\bullet$ Recall. $E_i[E^i(z)]=E_{i-1}(z)$
 \begin{align}
@@ -806,25 +820,25 @@ E^i(z)=\int_{\lambda_{i+1} \epsilon x^{n-1}}f(x_1...x_{i-1},x_{i+1}...x_n)d.p(x_
 =E_{i-1}(z)\rightarrow 3
 \end{align}
 \begin{align}
-\Delta_i=E_i(z)-E_{i-1}(z)
+V_i=E_i(z)-E_{i-1}(z)
 \end{align}
 \begin{align}
-\Delta_i=E_i[z-E^i(z)].
+V_i=E_i[z-E^i(z)].
 \end{align}
 \begin{align}
-\Delta_i^2=[Ei[z-E^i(z)]]^2.
+V_i^2=[Ei[z-E^i(z)]]^2.
 \end{align}
 \textbf{jensun's inequality} if g is aconvex function and x is a random variable then
 \begin{align}
 E[f(x)] \geqslant f(E{x})
 \end{align}
-Apply this result to $\Delta_i$
+Apply this result to $V_i$
 \begin{align}
-E[\Delta_i^2] \geqslant (E[\Delta_i])^2 or
+E[V_i^2] \geqslant (E[V_i])^2 or
 \end{align}
 \begin{align}
-(E[\Delta_i])^2\leqslant E[\Delta_i^2]:\rightarrow 4
+(E[V_i])^2\leqslant E[V_i^2]:\rightarrow 4
 \end{align}
- Recall Var =$E[\Sigma_{1=1}^{n} \Delta_i^2]$
+ Recall Var =$E[\sum_{1=1}^{n} V_i^2]$
 \end{enumerate}
 \end{document}
