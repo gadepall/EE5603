@@ -749,14 +749,27 @@ substituting $\vec{a} = -\vec{c}, \vec{b} = \vec{c}$ in \eqref{eq:hoeff_ineq}, s
 \end{align}
 Show that 
 \begin{align}
-\text{var} \brak{Z} = \sum_{1=1}^{n}E[ V_i^2]+2\sum_{i>j}E[V_i V_j]
+\text{var} \brak{Z} = \sum_{1=1}^{n}E\brak{ V_i^2}+2\sum_{i>j}E\brak{V_i V_j}
 \end{align}
 \item If
 \begin{align}
 \vec{X}_i = \vec{X}_{1:i}=\myvec{X_1 & X_2 & \dots & X_i},\, \text{(say)}
 \end{align}
 %
+and 
+\begin{align}
+\vec{V}_i =E\brak{Z|\vec{X}_{i}}-E\brak{Z|\vec{X}_{i-1}} 
+ &=E_i(Z)-E_{i-1}(Z) 
+\end{align}
+show that 
+\begin{align}
+E\brak{V_i V_j} = E\sbrak{V_i E\brak{V_j|\vec{X}_i}} = 0, \quad i > j
+\end{align}
 and
+\begin{align}
+\text{var} \brak{Z} = \sum_{1=1}^{n}E\brak{ V_i^2} 
+\end{align}
+\item Show that 
 \item Let
 \begin{align}
 \vec{X}= \myvec{X_1 & X_2 &  \dots & X_n}
