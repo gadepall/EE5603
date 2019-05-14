@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{mathpazo}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\begin{document}
+\begin{center}
+{\large{{\bf{EE5603: Concentration Inequalities, Spring 2019 (12)}\\}}}
+Indian Institute of Technology Hyderabad\\
+HW 2, 30 points. Assigned: Saturday 02.02.2019.\\
+{\bf{Due: Monday 04.02.2019 at 11:59 pm.}} 
+\end{center}
+\begin{enumerate}
+\item{
+Assume that the random variables $X_1, \ldots, X_n$ are independent and binary \{-1, 1\}-valued with $P\{X_i = 1\} = p_i$ and that $f:\{-1, 1\}^n \longrightarrow \mathbb{R}$ has the bounded differences property with constants $c_1, \ldots, c_n$. Show that if $Z = f(X_1, \ldots, X_n)$, $Var(Z) \leq \sum\limits_{i=1}^nc_i^2p_i(1 - p_i)$. (10) 
+}
+
+    \item{Efron-Stein inequality: Recall the notation and formulation from class. $X_1, \ldots, X_n$ are independent random variables that take values from the set $\mathcal{X}$, $f: \mathcal{X}^n \longrightarrow \mathbb{R}$ is a square integrable function, $Z = f(X_1, \ldots, X_n), E_i(Z) = E[Z|X_1, \ldots, X_i], E^i(Z) = \int\limits_{x_i \in \mathcal{X}} f(X_1, \ldots, x_i, \ldots X_n) dP(x_i), \Delta_i = E_i(Z) - E_{i-1}(Z)$. Prove the following equalities and inequalities that were claimed to be true in class: 
+        \begin{enumerate}
+        \item{$Var(Z) = \sum\limits_{i=1}^n\Delta_i^2$. (5)}
+        \item{$E_iE^i(Z) = E_{i-1}(Z)$. (5)}
+        \item{$\Delta_i^2 \leq E_i((Z - E^i(Z))^2)$. (5)}
+        \item{$Var(Z) \leq \sum\limits_{i=1}^n E(Z - E^i(Z))^2$. (5)}
+        \end{enumerate}
+        }
+\end{enumerate}
+\end{document}

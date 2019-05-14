@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{mathpazo}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\begin{document}
+\begin{center}
+{\large{{\bf{EE5603: Concentration Inequalities, Spring 2019 (12)}\\}}}
+Indian Institute of Technology Hyderabad\\
+HW 0, Assigned: Monday 14.01.2019. 120 points.\\
+{\bf{Due: Sunday 20.01.2019 at 11:59 pm.}} 
+\end{center}
+\begin{enumerate}
+\item{{{Convergence of random variables:}} Define the following types of convergence of a sequence of random variables ($X_n: n\geq 1$) to a random variable $X$: (5)
+\begin{enumerate}
+\item{Almost sure: $X_n \xrightarrow {a.s.} X$.}
+\item{Probability: $X_n \xrightarrow {p.} X$.}
+\item{Mean squared: $X_n \xrightarrow {m.s.} X$.}
+\item{Distribution: $X_n \xrightarrow {d.} X$.}
+\end{enumerate}
+}
+\item{Let $\Theta$ be uniformly distributed on the interval [$0, 2\pi$]. In which of the four senses (defined in the previous question) do each of the following two sequences converge. Identify the limits, if they exist, and justify your answers. (10)
+\begin{enumerate}
+\item{($X_n: n\geq 1$) defined by $X_n = \text{cos}(n\Theta)$.}
+\item{($Y_n: n\geq 1$) defined by $Y_n = |1 - \frac{\Theta}{\pi}|^n$.}
+\end{enumerate}
+}
+\item{Find the moment generation function of $X \sim \mathcal{N}(0, \sigma^2)$. (5)}
+\item{Use the Markov inequality to prove the following (with appropriate assumptions):
+\begin{enumerate}
+\item{The Chebyshev inequality. (5)}
+\item{The Chernoff bound. (5)}
+\end{enumerate}
+}
+\item{\begin{enumerate}
+\item{Give an example where the Markov inequality is tight. (5)}
+\item{Give an example where the Chernoff bound is tighter than the Chebyshev inequality. (5)}
+\item{Suppose we have 100 books with the number of pages uniformly distributed in [5, 50] so that the average number of pages is 27.50 and the variance is 168.75 pages. Upper bound the probability that the number of pages exceeds 3000 pages using both Chebyshev's inequality and CLT. What can you say about the two estimates? (5)}
+\item{Illustrate with a Python program the CLT for at least four different types of distributions. (5)}
+\end{enumerate}}
+\item{\begin{enumerate}
+\item{
+Use the basic inequalities to prove the weak law of large numbers (LLN). (5)}
+\item{Illustrate the efficacy of the LLN with a Python program using at least four different types of distributions. (5)} 
+\end{enumerate}
+}
+\item{Definition: A real valued random variable $X$ is said to be $\sigma^2$-sub-Gaussian if there exists a positive number $\sigma$ such that $\mathbb{E}[e^{\lambda X)}]\leq e^{\frac{\sigma^2\lambda^2}{2}}$ for every $\lambda \in \mathbb{R}$. Show that the following random variables are $\sigma^2$-sub-Gaussian and find $\sigma$ for each of them.
+\begin{enumerate}
+\item{A Rademacher random variable. (5)}
+\item{A Gaussian random variable with zero mean and variance $\sigma^2$. (5)}
+\item{A random variable that is zero mean and bounded in the interval $[a, b]$. (5)}
+\end{enumerate}
+}
+\item{Prove that for a $\sigma^2$-sub-Gaussian random variable with mean $\mu$, $P[|X - \mu| \geq t] \leq \text{exp}(\frac{-t^2}{2\sigma^2})$ for all $t > 0$. (5)}
+\item{If $X_i$ are independent, mean-zero, $\sigma_i^2$-sub-Gaussian random variables, show that $\sum\limits_{i=1}^n X_i$ is $\sum\limits_{i=1}^n \sigma_i^2$-sub-Gaussian. (5)}
+\item{If $X_i$ are bounded random variable (in $[a_i, b_i]$), show that  $P(\frac{1}{n}\sum\limits_{i=1}^n (X_i - \mathbb{E}[{X_i}]) \geq t) \leq \text{exp}\Big(-\frac{2n^2t^2}{\sum\limits_{i=1}^n (b_i - a_i)^2}\Big)$ and $P(\frac{1}{n}\sum\limits_{i=1}^n (X_i - \mathbb{E}[{X_i}]) \leq -t) \leq \text{exp}\Big(-\frac{2n^2t^2}{\sum\limits_{i=1}^n (b_i - a_i)^2}\Big)$  for all $t > 0$. (10)}
+\item{Definition: A random variable $X$ with mean $\mu$ is sub-exponential if there are non-negative parameters $(\nu, b)$ such that $\mathbb{E}[e^{\lambda(X - \mu)}] \leq e^{\frac{\nu^2\\\lambda^2}{2}}$ for all $|\lambda| < \frac{1}{b}$. Show that:
+\begin{enumerate}
+\item{The exponential random variable with parameter $\lambda$ is sub-exponential. (5)}
+\item{The $\chi^2$-random variable is sub-exponential. (5)}
+\end{enumerate}}
+\item{Suppose that $X$ is a $(\nu, b)$-sub-exponential random variable with mean $\mu$, derive the tail bound $P[X \geq \mu + t]$ for all $t > 0$. (5)}
+\item{If $X_i$ are independent, $(\nu, b)$-sub-exponential random variables, then $\sum\limits_{i=1}^n X_i$ is $(\sum\limits_{i=1}^n \nu_i, b_*)$-sub-exponential where $b_* = \text{max}_i b_i$. (5)}
+\item{Bernstein bound: If $X$ is a random variable with mean $\mu$ and variance $\sigma^2$ and satisfies the condition $|\mathbb{E}[(X - \mu)^k]| \leq \frac{1}{2}k!\sigma^2b^{k-2}$, it is said to satisfy the Bernstein condition with parameter $b$. For such a random variable show that $\mathbb{E}[e^{\lambda(X - \mu)}]\leq e^{\frac{\lambda^2\sigma^2/2}{1 - b|\lambda|}}]$ for all $|\lambda| < \frac{1}{b}$. (5)}
+\end{enumerate}
+\end{document}

@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{mathpazo}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\begin{document}
+\begin{center}
+{\large{{\bf{EE5603: Concentration Inequalities, Spring 2019 (12)}\\}}}
+Indian Institute of Technology Hyderabad\\
+HW 1, 50 points. Assigned: Sunday 27.01.2019.\\
+{\bf{Due: Thursday 31.01.2019 at 11:59 pm.}} 
+\end{center}
+\begin{enumerate}
+\item{The $\chi^2(n)$ random variable is defined as $\chi^2(n) = \sum\limits_{i=1}^{n}X_i^2$ where $X_i$ are independent standard normal random variables. Empirically check for sub-Gaussianity of $\chi^2(n)$ as a function of $n$. (5)}
+\item{We saw a few examples of sub-Gaussian random variables in the class. Demonstrate the following with a Python script:
+\begin{enumerate}
+\item{Sub-Gaussianity of a Gaussian random variable with zero mean and variance $\sigma^2$. (5)}
+\item{Sub-Gaussianity of a Uniform random variable with range $[-a, a]$. (5)}
+\item{Non sub-Gaussianity of a Laplacian random variable with zero mean and variance $2b^2$. (5)}
+\item{Non sub-Gaussianity of a centered heavy tailed random variable of your choice. (5)}
+\item{Sub-Gaussianity of a sum of bounded random variables with zero mean. (5)}
+\end{enumerate}
+As discussed in class, choose the variance of the ``reference'' Gaussian appropriately. 
+}
+\item{Recall the definition of the Cramer's transform from the quiz. Find the Cramer's transform of a centered Bernoulli random variable with parameter $p$. (5)}
+\item{Bennett's inequality: we proved in class that for centered random variables $X_1, X_2, \ldots, X_n$ that satisfy $X_i \leq b$ for some $b > 0$ almost surely for all $i \leq n$, and have finite variance with $v = \sum\limits_{i=1}^nX_i^2$ and $S = \sum\limits_{i=1}^n (X_i - E[X_i])$, for all $\lambda > 0$, 
+$\text{log} {\mathbb{E}}e^{\lambda S} \leq n\text{log} (1 + \frac{v}{nb^2} \phi(\lambda b)) \leq \frac{v}{b^2}\phi(\lambda b)$. Here $\phi(u) = e^u - u - 1$. Now show the following tail bound for any $t > 0$:
+ $P(S \geq t) \leq \text{exp}(-\frac{v}{b^2}h(\frac{bt}{v}))$ where $h(u) = (1 + u)\text{log}(1 + u) - u$ for $u > 0$. 
+   (5)} 
+\item{Empirically compare (using a Python script) the sharpness/tightness of the tail bound due to Bennett's inequality with the Hoeffding's inequality and the Chernoff's inequality. Show appropriate plots to demonstrate your comparisons. (10)}
+\end{enumerate}
+\end{document}

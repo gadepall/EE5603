@@ -1,0 +1,399 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+%
+\usepackage{setspace}
+\usepackage{gensymb}
+\usepackage{xcolor}
+\usepackage{caption}
+%\usepackage{subcaption}
+%\doublespacing
+\singlespacing
+
+%\usepackage{graphicx}
+%\usepackage{amssymb}
+%\usepackage{relsize}
+\usepackage[cmex10]{amsmath}
+\usepackage{mathtools}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+%\usepackage{xtab}
+\usepackage{longtable}
+\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{mathtools}
+%\usepackage{iithtlc}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{listings}
+
+
+%\usepackage{stmaryrd}
+
+
+%\usepackage{wasysym}
+%\newcounter{MYtempeqncnt}
+\DeclareMathOperator*{\Res}{Res}
+%\renewcommand{\baselinestretch}{2}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\lstset{
+language=Python,
+frame=single, 
+breaklines=true
+}
+
+%\lstset{
+	%%basicstyle=\small\ttfamily\bfseries,
+	%%numberstyle=\small\ttfamily,
+	%language=python,
+	%backgroundcolor=\color{white},
+	%%frame=single,
+	%%keywordstyle=\bfseries,
+	%%breaklines=true,
+	%%showstringspaces=false,
+	%%xleftmargin=-10mm,
+	%%aboveskip=-1mm,
+	%%belowskip=0mm
+%}
+
+%\surroundwithmdframed[width=\columnwidth]{lstlisting
+\begin{document}
+%
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}{Definition}[section]
+%\newtheorem{definition}{Definition}
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+
+\bibliographystyle{IEEEtran}
+%\bibliographystyle{ieeetr}
+
+\providecommand{\nCr}[2]{\,^{#1}C_{#2}} % nCr
+\providecommand{\nPr}[2]{\,^{#1}P_{#2}} % nPr
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\numberwithin{equation}{section}
+%\numberwithin{equation}{problem}
+%\numberwithin{problem}{subsection}
+%\numberwithin{definition}{subsection}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+%\newcommand{\solution}{\noindent \textbf{Solution: }}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\numberwithin{equation}{section}
+%\numberwithin{equation}{problem}
+%\numberwithin{problem}{subsection}
+%\numberwithin{definition}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+%\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
+\renewcommand{\thefigure}{\theproblem}
+
+
+%\numberwithin{figure}{subsection}
+
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+
+\vspace{3cm}
+
+\title{ 
+%\logo{
+Tutorial Problems:  Concentration Inequalities
+%}
+%	\logo{python for Math Computing }
+}
+%\title{
+%	\logo{Matrix Analysis through python}{\begin{center}\includegraphics[scale=.24]{tlc}\end{center}}{}{HAMDSP}
+%}
+
+
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+%\title{Matrix Analysis through python}
+%
+%
+% author names and IEEE memberships
+% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
+% a structure at a ~ so this keeps an author's name from being broken across
+% two lines.
+% use \thanks{} to gain access to the first footnote area
+% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
+% was not built to handle multiple paragraphs
+%
+
+\author{Sumohana Chennappayya and G V V Sharma$^{*}$ %<-this  stops a space
+\thanks{ *The author is with the Department
+of Electrical Engineering, IIT, Hyderabad
+502285 India e-mail: gadepall@iith.ac.in. All material in the manuscript is released under GNU GPL.  Free to use for all.}% <-this % stops a space
+%\thanks{J. Doe and J. Doe are with Anonymous University.}% <-this % stops a space
+%\thanks{Manuscript received April 19, 2005; revised January 11, 2007.}}
+}
+% note the % following the last \IEEEmembership and also \thanks - 
+% these prevent an unwanted space from occurring between the last author name
+% and the end of the author line. i.e., if you had this:
+% 
+% \author{....lastname \thanks{...} \thanks{...} }
+%                     ^------------^------------^----Do not want these spaces!
+%
+% a space would be appended to the last name and could cause every name on that
+% line to be shifted left slightly. This is one of those "LaTeX things". For
+% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
+% "AB" then you have to do: "\textbf{A}\textbf{B}"
+% \thanks is no different in this regard, so shield the last } of each \thanks
+% that ends a line with a % and do not let a space in before the next \thanks.
+% Spaces after \IEEEmembership other than the last one are OK (and needed) as
+% you are supposed to have spaces between the names. For what it is worth,
+% this is a minor point as most people would not even notice if the said evil
+% space somehow managed to creep in.
+
+
+
+% The paper headers
+%\markboth{Journal of \LaTeX\ Class Files,~Vol.~6, No.~1, January~2007}%
+%{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+% 
+% *** Note that you probably will NOT want to include the author's ***
+% *** name in the headers of peer review papers.                   ***
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
+
+
+
+
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+%\IEEEpubid{0000--0000/00\$00.00~\copyright~2007 IEEE}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark.
+
+
+
+% make the title area
+\maketitle
+
+%\documentclass{article}
+%\usepackage{amsmath}
+%\begin{document}
+%\centerline{\textbf{EE5603:Conceention Inequalities}}
+%\section{Convergence}
+%\subsection{Definitions}
+%%\begin{itemize}
+%%\item Today :\item Recall motivation of measure theroetic prob.
+%%\item Basic inequalities with proof and examples
+%%\ - markor 
+%%\ - Chebyshow
+%%\ - Chernoff
+%%\ - LLN
+%%\end{itemize}
+%\section{Basice into to measure theroetic probability:}
+%$\bullet(\Omega, \int,\rho )$ the probility triplet\\
+%
+%$\Omega :$ set of proible ontcones w.\\
+%
+%$\int$ : {$\sigma$}-algebra defined on $\Omega$ that satsti the following axiome\\
+%
+%\section{Axionss}
+%A.1. $\Omega \epsilon$\\
+%
+%A.2.if A $\epsilon \int ,A^c \epsilon $\\
+%
+%A.3.if A $\epsilon ,B \epsilon , then A UB \epsilon $\\
+%
+%From A.2,(OR) A.3 we can show that if A $\varepsilon$ $\int$,B $\epsilon$ $\int$\\
+%
+%then,A$\bigcap$B $\epsilon$ $\int$\\
+%
+%$\textbf{proof}:A^c \epsilon \int, B^c \epsilon \int$ (from A.2)\\
+%
+%$\Rightarrow A^c \cup B^c \varepsilon \int$(from A.3)\\
+%
+%$\Rightarrow(A^c \cup B^c)^c \epsilon \int$ (from A.2)\\
+%
+%we know $ A \cup B =(A^c \cup B^c)^c$\\
+%
+%$\therefore A \cap B \epsilon \int.$\\
+%
+%\textbf{P}:A probalitity measure defined on that satises the following axiome\\
+%
+%\textbf{P.1:}$\Pr(A)$ $\geqslant$ 0 for all A$\varepsilon$\\
+%
+%\textbf{P.2:}$ \Pr(A_1 \cup A_2)$ = $\Pr(A_1)$+ $Pr(A_2)$ for distint sets $(A_1,A_2)$\\
+%
+%\textbf{P.3:}$\Pr(\Omega)=1$\\
+%
+%A random variable x map $\Omega$ to  and is $\int$ -measurable.\\
+%
+%for any $\varepsilon $, {w:X(W)$\leq $ $\varepsilon$} $\varepsilon$ $\epsilon$\\
+%
+%\section{Recall defin of a.s. conesgence:}
+%\begin{align}
+%\Pr(line|x_n=x)=1
+%\end{align}
+%can be interpreted as\\
+%\begin{align}
+%\Pr(w: x_n (w)=x(w))=1
+%\end{align}
+%\textbf{ex:} $\Omega$={a,b,c,d}\\
+%$\sigma$-algebra ={$\Omega$, $\emptyset$,{a,b},{c,d}}\\
+%\begin{align}
+%\bullet F_x(x)=\Pr{w:x(w) \leqslant x}
+%\end{align}
+%\begin{align}
+% =\Pr(X \leq \lambda)
+% \end{align}
+% \begin{align}
+%\bullet F_x(\lambda)=\int_{-\propto}^{x}f_x(t)dt
+%\end{align} 
+%$\bullet$ Review /prowe basic ineqlities:
+\begin{enumerate}
+\item{{{Convergence of random variables:}} Define the following types of convergence of a sequence of random variables ($X_n: n\geq 1$) to a random variable $X$: (5)
+\begin{enumerate}
+\item{Almost sure: $X_n \xrightarrow {a.s.} X$.}
+\item{Probability: $X_n \xrightarrow {p.} X$.}
+\item{Mean squared: $X_n \xrightarrow {m.s.} X$.}
+\item{Distribution: $X_n \xrightarrow {d.} X$.}
+\end{enumerate}
+}
+\item{Let $\Theta$ be uniformly distributed on the interval [$0, 2\pi$]. In which of the four senses (defined in the previous question) do each of the following two sequences converge. Identify the limits, if they exist, and justify your answers. (10)
+\begin{enumerate}
+\item{($X_n: n\geq 1$) defined by $X_n = \text{cos}(n\Theta)$.}
+\item{($Y_n: n\geq 1$) defined by $Y_n = |1 - \frac{\Theta}{\pi}|^n$.}
+\end{enumerate}
+}
+\item{Find the moment generation function of $X \sim \mathcal{N}(0, \sigma^2)$. (5)}
+\item{Use the Markov inequality to prove the following (with appropriate assumptions):
+\begin{enumerate}
+\item{The Chebyshev inequality. (5)}
+\item{The Chernoff bound. (5)}
+\end{enumerate}
+}
+\item{\begin{enumerate}
+\item{Give an example where the Markov inequality is tight. (5)}
+\item{Give an example where the Chernoff bound is tighter than the Chebyshev inequality. (5)}
+\item{Suppose we have 100 books with the number of pages uniformly distributed in [5, 50] so that the average number of pages is 27.50 and the variance is 168.75 pages. Upper bound the probability that the number of pages exceeds 3000 pages using both Chebyshev's inequality and CLT. What can you say about the two estimates? (5)}
+\item{Illustrate with a Python program the CLT for at least four different types of distributions. (5)}
+\end{enumerate}}
+\item{\begin{enumerate}
+\item{
+Use the basic inequalities to prove the weak law of large numbers (LLN). (5)}
+\item{Illustrate the efficacy of the LLN with a Python program using at least four different types of distributions. (5)} 
+\end{enumerate}
+}
+\item{Definition: A real valued random variable $X$ is said to be $\sigma^2$-sub-Gaussian if there exists a positive number $\sigma$ such that $\mathbb{E}[e^{\lambda X)}]\leq e^{\frac{\sigma^2\lambda^2}{2}}$ for every $\lambda \in \mathbb{R}$. Show that the following random variables are $\sigma^2$-sub-Gaussian and find $\sigma$ for each of them.
+\begin{enumerate}
+\item{A Rademacher random variable. (5)}
+\item{A Gaussian random variable with zero mean and variance $\sigma^2$. (5)}
+\item{A random variable that is zero mean and bounded in the interval $[a, b]$. (5)}
+\end{enumerate}
+}
+\item{Prove that for a $\sigma^2$-sub-Gaussian random variable with mean $\mu$, $P[|X - \mu| \geq t] \leq \text{exp}(\frac{-t^2}{2\sigma^2})$ for all $t > 0$. (5)}
+\item{If $X_i$ are independent, mean-zero, $\sigma_i^2$-sub-Gaussian random variables, show that $\sum\limits_{i=1}^n X_i$ is $\sum\limits_{i=1}^n \sigma_i^2$-sub-Gaussian. (5)}
+\item{If $X_i$ are bounded random variable (in $[a_i, b_i]$), show that  $P(\frac{1}{n}\sum\limits_{i=1}^n (X_i - \mathbb{E}[{X_i}]) \geq t) \leq \text{exp}\Big(-\frac{2n^2t^2}{\sum\limits_{i=1}^n (b_i - a_i)^2}\Big)$ and $P(\frac{1}{n}\sum\limits_{i=1}^n (X_i - \mathbb{E}[{X_i}]) \leq -t) \leq \text{exp}\Big(-\frac{2n^2t^2}{\sum\limits_{i=1}^n (b_i - a_i)^2}\Big)$  for all $t > 0$. (10)}
+\item{Definition: A random variable $X$ with mean $\mu$ is sub-exponential if there are non-negative parameters $(\nu, b)$ such that $\mathbb{E}[e^{\lambda(X - \mu)}] \leq e^{\frac{\nu^2\\\lambda^2}{2}}$ for all $|\lambda| < \frac{1}{b}$. Show that:
+\begin{enumerate}
+\item{The exponential random variable with parameter $\lambda$ is sub-exponential. (5)}
+\item{The $\chi^2$-random variable is sub-exponential. (5)}
+\end{enumerate}}
+\item{Suppose that $X$ is a $(\nu, b)$-sub-exponential random variable with mean $\mu$, derive the tail bound $P[X \geq \mu + t]$ for all $t > 0$. (5)}
+\item{If $X_i$ are independent, $(\nu, b)$-sub-exponential random variables, then $\sum\limits_{i=1}^n X_i$ is $(\sum\limits_{i=1}^n \nu_i, b_*)$-sub-exponential where $b_* = \text{max}_i b_i$. (5)}
+\item{Bernstein bound: If $X$ is a random variable with mean $\mu$ and variance $\sigma^2$ and satisfies the condition $|\mathbb{E}[(X - \mu)^k]| \leq \frac{1}{2}k!\sigma^2b^{k-2}$, it is said to satisfy the Bernstein condition with parameter $b$. For such a random variable show that $\mathbb{E}[e^{\lambda(X - \mu)}]\leq e^{\frac{\lambda^2\sigma^2/2}{1 - b|\lambda|}}]$ for all $|\lambda| < \frac{1}{b}$. (5)}
+\item{The $\chi^2(n)$ random variable is defined as $\chi^2(n) = \sum\limits_{i=1}^{n}X_i^2$ where $X_i$ are independent standard normal random variables. Empirically check for sub-Gaussianity of $\chi^2(n)$ as a function of $n$. (5)}
+\item{We saw a few examples of sub-Gaussian random variables in the class. Demonstrate the following with a Python script:
+\begin{enumerate}
+\item{Sub-Gaussianity of a Gaussian random variable with zero mean and variance $\sigma^2$. (5)}
+\item{Sub-Gaussianity of a Uniform random variable with range $[-a, a]$. (5)}
+\item{Non sub-Gaussianity of a Laplacian random variable with zero mean and variance $2b^2$. (5)}
+\item{Non sub-Gaussianity of a centered heavy tailed random variable of your choice. (5)}
+\item{Sub-Gaussianity of a sum of bounded random variables with zero mean. (5)}
+\end{enumerate}
+As discussed in class, choose the variance of the ``reference'' Gaussian appropriately. 
+}
+\item{Recall the definition of the Cramer's transform from the quiz. Find the Cramer's transform of a centered Bernoulli random variable with parameter $p$. (5)}
+\item{Bennett's inequality: we proved in class that for centered random variables $X_1, X_2, \ldots, X_n$ that satisfy $X_i \leq b$ for some $b > 0$ almost surely for all $i \leq n$, and have finite variance with $v = \sum\limits_{i=1}^nX_i^2$ and $S = \sum\limits_{i=1}^n (X_i - E[X_i])$, for all $\lambda > 0$, 
+$\text{log} {\mathbb{E}}e^{\lambda S} \leq n\text{log} (1 + \frac{v}{nb^2} \phi(\lambda b)) \leq \frac{v}{b^2}\phi(\lambda b)$. Here $\phi(u) = e^u - u - 1$. Now show the following tail bound for any $t > 0$:
+ $P(S \geq t) \leq \text{exp}(-\frac{v}{b^2}h(\frac{bt}{v}))$ where $h(u) = (1 + u)\text{log}(1 + u) - u$ for $u > 0$. 
+   (5)} 
+\item{Empirically compare (using a Python script) the sharpness/tightness of the tail bound due to Bennett's inequality with the Hoeffding's inequality and the Chernoff's inequality. Show appropriate plots to demonstrate your comparisons. (10)}
+\item{
+Assume that the random variables $X_1, \ldots, X_n$ are independent and binary \{-1, 1\}-valued with $P\{X_i = 1\} = p_i$ and that $f:\{-1, 1\}^n \longrightarrow \mathbb{R}$ has the bounded differences property with constants $c_1, \ldots, c_n$. Show that if $Z = f(X_1, \ldots, X_n)$, $Var(Z) \leq \sum\limits_{i=1}^nc_i^2p_i(1 - p_i)$. (10) 
+}
+
+    \item{Efron-Stein inequality: Recall the notation and formulation from class. $X_1, \ldots, X_n$ are independent random variables that take values from the set $\mathcal{X}$, $f: \mathcal{X}^n \longrightarrow \mathbb{R}$ is a square integrable function, $Z = f(X_1, \ldots, X_n), E_i(Z) = E[Z|X_1, \ldots, X_i], E^i(Z) = \int\limits_{x_i \in \mathcal{X}} f(X_1, \ldots, x_i, \ldots X_n) dP(x_i), \Delta_i = E_i(Z) - E_{i-1}(Z)$. Prove the following equalities and inequalities that were claimed to be true in class: 
+        \begin{enumerate}
+        \item{$Var(Z) = \sum\limits_{i=1}^n\Delta_i^2$. (5)}
+        \item{$E_iE^i(Z) = E_{i-1}(Z)$. (5)}
+        \item{$\Delta_i^2 \leq E_i((Z - E^i(Z))^2)$. (5)}
+        \item{$Var(Z) \leq \sum\limits_{i=1}^n E(Z - E^i(Z))^2$. (5)}
+        \end{enumerate}
+        }
+\end{enumerate}
+
+\end{document}
