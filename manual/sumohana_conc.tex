@@ -750,96 +750,33 @@ substituting $\vec{a} = -\vec{c}, \vec{b} = \vec{c}$ in \eqref{eq:hoeff_ineq}, s
 \end{align}
 Show that 
 \begin{align}
-\text{var} \brak{Z} = \sum_{1=1}^{n}E[ V_i^2]+2\sum_{i>j}E[V_i V_j]
+\text{var} \brak{Z} = \sum_{1=1}^{n}E\brak{ V_i^2}+2\sum_{i>j}E\brak{V_i V_j}
 \end{align}
 \item If
 \begin{align}
 \vec{X}_i = \vec{X}_{1:i}=\myvec{X_1 & X_2 & \dots & X_i},\, \text{(say)}
 \end{align}
 %
+and 
+\begin{align}
+{V}_i =E_{i+1:n}\brak{Z|\vec{X}_{i}}-E_{i:n}\brak{Z|\vec{X}_{i-1}} 
+\end{align}
+show that 
+\begin{align}
+E\brak{V_i V_j} = E\sbrak{V_i E_{i+1:n}\brak{V_j|\vec{X}_i}} = 0, \quad i > j
+\end{align}
 and
-\item Let
 \begin{align}
-\vec{X}= \myvec{X_1 & X_2 &  \dots & X_n}
+\text{var} \brak{Z} = \sum_{i=1}^{n}E\brak{ V_i^2} 
 \end{align}
-be a random vector comprising of independent r.vs and $f$ be  square integrable.
+\item Show that 
 \begin{align}
-\text{var}\sbrak{f\brak{\vec{X}}} \leqslant \frac{1}{2}\sum_{i=1}^{n} E\sbrak{\cbrak{f\brak{\vec{X}}-f\brak{X_{1:i-1},X_{i}^{\prime},X_{i+1:n}}}^2}
+E_{i:n}\brak{Z|\vec{X}_{i-1}} = E_{i+1:n}\sbrak{E_{i}\brak{Z|\vec{X}_{i-1}} }
 \end{align}
+\item Using Jensen's inequality, show that 
 \begin{align}
-\bullet E_i(z)=E[f(x_i...x_n)|x^i]; E_\circ=E
+E\brak{ V_i^2} \le E\sbrak{\cbrak{Z-E_i\brak{Z|X_{1:i,i+1,n}}}^2}
+%E\sbrak{E_i(Z)-E_{i-1}(Z) }
 \end{align}
-\begin{align}
-\bullet E^i(z)= \int_{\lambda_i \epsilon x} f(x_1...x_i,...x_n)dp(xi)
-\end{align}
-\begin{align}
-\bullet if V_i=E_i(z)-E_{i-1}(z),\sum_{1=1}^{n} V_i=z-E(z).\rightarrow 1
-\end{align}
-\begin{align}
-\bullet Var(z)=E[(z-E(z))^2] (from defin)
-\end{align}
-\begin{align}
-=E[(\sum_{1=1}^{n} V_i)^2] (from 1)
-\end{align}
-\begin{align}
-=E[\sum_{1=1}^{n} V_i^2 +2\sum_{j>i} V_i V _j]
-\end{align}
-\begin{align}
-E[\sum_{1=1}^{n} V_i^2]+2.\sum_{j>i}E[V_j V_i]
-\end{align}
-\textbf{Claim:}if $j>i,E_i V_i=0$
-\begin{align}
-E_iV_j=E_i[E_j(z)-E_{j-1}(z)]
-\end{align}
-\begin{align}
-=E[E_j(z)-E_{j-1}(z)|x^i]
-\end{align}
-\begin{align}
-=E_i(z)-E_i(z)\leftarrow(since j>i)
-\end{align}
-\begin{align}
-=0
-\end{align}
-if$E_i V_j=0 j>i,$then $2\sum_{j>i}E[V_iV_j]=?=0$
-\begin{align}
-\Rightarrow Var(z)=E(\sum_{1=1}^{n} V_i^2)\rightarrow2
-\end{align}
-$\bullet$ Recall. $E_i[E^i(z)]=E_{i-1}(z)$
-\begin{align}
-E^i(z)=\int_{\lambda_i \epsilon x}f(x_1...x_{i-1},xi,x_{i-1}...x_n)dp(xi)
-\end{align}
-\begin{align}
-E^i(z)=\int_{\lambda_{i+1} \epsilon x^{n-1}}f(x_1...x_{i-1},x_{i+1}...x_n)d.p(x_{i+1}^n)
-\end{align}
-\begin{align}
-\Rightarrow E_i[E^i(z)]=\int_{x_{i+1} \epsilon x^{n-i}} \int_{x_i \epsilon \chi}f(x_1...x_i,...x_{i-1}...x_n).dp(x_i)
-\end{align}
-\begin{align}
-=\int_{x_i \epsilon x^{n-(i-1)}}f(x_1...x_{i-1},x_i,...x_n).dp(x_i^n)
-\end{align}
-\begin{align}
-=E_{i-1}(z)\rightarrow 3
-\end{align}
-\begin{align}
-V_i=E_i(z)-E_{i-1}(z)
-\end{align}
-\begin{align}
-V_i=E_i[z-E^i(z)].
-\end{align}
-\begin{align}
-V_i^2=[Ei[z-E^i(z)]]^2.
-\end{align}
-\textbf{jensun's inequality} if g is aconvex function and x is a random variable then
-\begin{align}
-E[f(x)] \geqslant f(E{x})
-\end{align}
-Apply this result to $V_i$
-\begin{align}
-E[V_i^2] \geqslant (E[V_i])^2 or
-\end{align}
-\begin{align}
-(E[V_i])^2\leqslant E[V_i^2]:\rightarrow 4
-\end{align}
- Recall Var =$E[\sum_{1=1}^{n} V_i^2]$
 \end{enumerate}
 \end{document}

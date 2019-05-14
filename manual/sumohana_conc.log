@@ -1,4 +1,8 @@
+<<<<<<< HEAD:manual/sumohana_conc.log
 This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.1)  14 MAY 2019 14:42
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Termux) (preloaded format=latex 2018.11.30)  10 MAY 2019 11:05
+>>>>>>> 9ee6d23c3c8f8e2650b4b6bb05d58b40013d67fe:sumohana_conc.log
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -631,6 +635,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [3]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+<<<<<<< HEAD:manual/sumohana_conc.log
 
 Overfull \hbox (24.34741pt too wide) detected at line 768
 []
@@ -644,6 +649,14 @@ Overfull \hbox (34.45163pt too wide) detected at line 816
 [5
 
 ] (./sumohana_conc.aux) ) 
+=======
+ [4]
+(./sumohana_conc.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+>>>>>>> 9ee6d23c3c8f8e2650b4b6bb05d58b40013d67fe:sumohana_conc.log
 Here is how much of TeX's memory you used:
  7222 strings out of 492645
  111989 string characters out of 6118921
@@ -653,4 +666,8 @@ Here is how much of TeX's memory you used:
  1144 hyphenation exceptions out of 8191
  36i,14n,40p,306b,316s stack positions out of 5000i,500n,10000p,200000b,80000s
 
+<<<<<<< HEAD:manual/sumohana_conc.log
 Output written on sumohana_conc.dvi (5 pages, 30068 bytes).
+=======
+Output written on sumohana_conc.dvi (4 pages, 26204 bytes).
+>>>>>>> 9ee6d23c3c8f8e2650b4b6bb05d58b40013d67fe:sumohana_conc.log
